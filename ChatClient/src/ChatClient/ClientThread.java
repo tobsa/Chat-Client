@@ -6,14 +6,12 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class ClientThread implements Runnable {
-    private MessageBoard messageBoard;
     private DataInputStream input;
     private DataOutputStream output;
     private IMFListener listener;
     
-    public ClientThread(MessageBoard messageBoard, Socket socket, IMFListener listener) {
-        this.messageBoard = messageBoard;
-        this.listener     = listener;
+    public ClientThread(Socket socket, IMFListener listener) {
+        this.listener = listener;
         
         try {
             input  = new DataInputStream(socket.getInputStream());

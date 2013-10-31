@@ -32,7 +32,7 @@ public class Server extends Thread implements Runnable, IMFListener {
     public void run() {
         while(true) {
             try {
-                ClientThread client = new ClientThread(messageBoard, serverSocket.accept(), this);
+                ClientThread client = new ClientThread(serverSocket.accept(), this);
                 new Thread(client).start();
                 
                 clients.add(client);
