@@ -15,4 +15,8 @@ public class MessageBoard extends JPanel {
         
         add(new JScrollPane(textArea));
     }
+
+    public synchronized void write(String message) {
+        textArea.append(message + "\n");
+    }
 }
