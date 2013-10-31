@@ -1,0 +1,4 @@
+ChatClient/build/
+ChatClient/nbproject/
+*.xml
+*.mf
